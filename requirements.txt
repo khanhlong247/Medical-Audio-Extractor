@@ -1,0 +1,15 @@
+# requirements.txt
+
+torch
+numpy
+librosa
+soundfile
+scipy
+accelerate
+python-dotenv
+cramjam==2.11.0
+fastparquet==2025.12.0
+huggingface-hub==0.25.2
+
+# Cài bản transformers commit cụ thể như notebook yêu cầu
+https://github.com/huggingface/transformers/archive/65dc261512cbdb1ee72b88ae5b222f2605aad8e5.zip

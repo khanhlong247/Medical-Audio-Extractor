@@ -1,0 +1,9 @@
+# .gitignore
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+data/
+!data/sample_medical.wav  # Giữ lại file mẫu này nếu muốn
+*.mp3
+*.wav
