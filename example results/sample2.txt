@@ -1,0 +1,119 @@
+Transcribing audio: data/extra_sample_2.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "ate], I am having uh left-sided headache, mostly frontal and behind my eye for one week. I have ear pressure and pressure in my nose while moving and chewing. I have seen my primary care provider and I was given Imitrex that does not help. I have tried Aleve Motrin and Excedrin.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: ate], I am having uh left-sided headache, mostly frontal and behind my eye for one week. I have ear ...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "left-sided headache",
+    "confidence": 1.0,
+    "source_phrase": "left-sided headache"
+  },
+  "symptoms": [
+    {
+      "value": "headache",
+      "confidence": 1.0,
+      "source_phrase": "left-sided headache"
+    },
+    {
+      "value": "ear pressure",
+      "confidence": 1.0,
+      "source_phrase": "ear pressure"
+    },
+    {
+      "value": "nose pressure",
+      "confidence": 1.0,
+      "source_phrase": "pressure in my nose"
+    }
+  ],
+  "duration": {
+    "value": "one week",
+    "confidence": 1.0,
+    "source_phrase": "for one week"
+  },
+  "severity": {
+    "value": "not_stated",
+    "confidence": 0.0,
+    "source_phrase": "not mentioned"
+  },
+  "demographics": {
+    "age": {
+      "value": "not_stated",
+      "confidence": 0.0
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: HEADACHE
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "ate], I am having uh left-sided headache, mostly frontal and behind my eye for one week. I have ear pressure and pressure in my nose while moving and chewing. I have seen my primary care provider and I was given Imitrex that does not help. I have tried Aleve Motrin and Excedrin.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "left-sided headache",
+      "confidence": 1.0,
+      "source_phrase": "left-sided headache"
+    },
+    "symptoms": [
+      {
+        "value": "headache",
+        "confidence": 1.0,
+        "source_phrase": "left-sided headache"
+      },
+      {
+        "value": "ear pressure",
+        "confidence": 1.0,
+        "source_phrase": "ear pressure"
+      },
+      {
+        "value": "nose pressure",
+        "confidence": 1.0,
+        "source_phrase": "pressure in my nose"
+      }
+    ],
+    "duration": {
+      "value": "one week",
+      "confidence": 1.0,
+      "source_phrase": "for one week"
+    },
+    "severity": {
+      "value": "not_stated",
+      "confidence": 0.0,
+      "source_phrase": "not mentioned"
+    },
+    "demographics": {
+      "age": {
+        "value": "not_stated",
+        "confidence": 0.0
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "headache",
+    "answers": []
+  }
+}

@@ -1,0 +1,109 @@
+Transcribing audio: data/extra_sample_7.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "I am a student. I get strange dreams like I calculate the value of different things like charge of an electron, finding the depth of birth, I might look innvative to people. This might appear like I profit from this, but this has a negative effect on me by these dreams whatever I had studyed during the day, all gets distructed, I get confused, I forget it.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: I am a student. I get strange dreams like I calculate the value of different things like charge of a...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "strange dreams",
+    "confidence": 1.0,
+    "source_phrase": "I get strange dreams like I calculate the value of different things like charge of an electron, finding the depth of birth, I might look innvative to people. This might appear like I profit from this, but this has a negative effect on me by these dreams whatever I had studyed during the day, all gets distructed, I get confused, I forget it."
+  },
+  "symptoms": [
+    {
+      "value": "confusion",
+      "confidence": 1.0,
+      "source_phrase": "I get confused"
+    },
+    {
+      "value": "forgetfulness",
+      "confidence": 1.0,
+      "source_phrase": "I forget it"
+    }
+  ],
+  "duration": {
+    "value": "not_stated",
+    "confidence": 0.0,
+    "source_phrase": "not mentioned in the transcript"
+  },
+  "severity": {
+    "value": "negative effect on me",
+    "confidence": 1.0,
+    "source_phrase": "this has a negative effect on me by these dreams whatever I had studyed during the day, all gets distructed, I get confused, I forget it."
+  },
+  "demographics": {
+    "age": {
+      "value": "not_stated",
+      "confidence": 0.0
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "I am a student. I get strange dreams like I calculate the value of different things like charge of an electron, finding the depth of birth, I might look innvative to people. This might appear like I profit from this, but this has a negative effect on me by these dreams whatever I had studyed during the day, all gets distructed, I get confused, I forget it.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "strange dreams",
+      "confidence": 1.0,
+      "source_phrase": "I get strange dreams like I calculate the value of different things like charge of an electron, finding the depth of birth, I might look innvative to people. This might appear like I profit from this, but this has a negative effect on me by these dreams whatever I had studyed during the day, all gets distructed, I get confused, I forget it."
+    },
+    "symptoms": [
+      {
+        "value": "confusion",
+        "confidence": 1.0,
+        "source_phrase": "I get confused"
+      },
+      {
+        "value": "forgetfulness",
+        "confidence": 1.0,
+        "source_phrase": "I forget it"
+      }
+    ],
+    "duration": {
+      "value": "not_stated",
+      "confidence": 0.0,
+      "source_phrase": "not mentioned in the transcript"
+    },
+    "severity": {
+      "value": "negative effect on me",
+      "confidence": 1.0,
+      "source_phrase": "this has a negative effect on me by these dreams whatever I had studyed during the day, all gets distructed, I get confused, I forget it."
+    },
+    "demographics": {
+      "age": {
+        "value": "not_stated",
+        "confidence": 0.0
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}

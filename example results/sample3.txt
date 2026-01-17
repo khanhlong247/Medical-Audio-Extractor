@@ -1,0 +1,109 @@
+Transcribing audio: data/extra_sample_3.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "]. I am 32 years old man and I have gastric and primary hypertension problem. Whatever I think my stomach is raised. I start passing gas from mouth and anes. My doctor says that my blood pressure is 145/90 is more than normal range. So please tell me if there is any relation between gastric problem and blood pressure.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: ]. I am 32 years old man and I have gastric and primary hypertension problem. Whatever I think my st...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "gastric problem",
+    "confidence": 1.0,
+    "source_phrase": "my stomach is raised"
+  },
+  "symptoms": [
+    {
+      "value": "passing gas from mouth",
+      "confidence": 1.0,
+      "source_phrase": "I start passing gas from mouth"
+    },
+    {
+      "value": "anxiety",
+      "confidence": 1.0,
+      "source_phrase": "anes"
+    }
+  ],
+  "duration": {
+    "value": "not_stated",
+    "confidence": 0.0,
+    "source_phrase": "not_stated"
+  },
+  "severity": {
+    "value": "not_stated",
+    "confidence": 0.0,
+    "source_phrase": "not_stated"
+  },
+  "demographics": {
+    "age": {
+      "value": "32 years old",
+      "confidence": 1.0
+    },
+    "gender": {
+      "value": "man",
+      "confidence": 1.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "]. I am 32 years old man and I have gastric and primary hypertension problem. Whatever I think my stomach is raised. I start passing gas from mouth and anes. My doctor says that my blood pressure is 145/90 is more than normal range. So please tell me if there is any relation between gastric problem and blood pressure.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "gastric problem",
+      "confidence": 1.0,
+      "source_phrase": "my stomach is raised"
+    },
+    "symptoms": [
+      {
+        "value": "passing gas from mouth",
+        "confidence": 1.0,
+        "source_phrase": "I start passing gas from mouth"
+      },
+      {
+        "value": "anxiety",
+        "confidence": 1.0,
+        "source_phrase": "anes"
+      }
+    ],
+    "duration": {
+      "value": "not_stated",
+      "confidence": 0.0,
+      "source_phrase": "not_stated"
+    },
+    "severity": {
+      "value": "not_stated",
+      "confidence": 0.0,
+      "source_phrase": "not_stated"
+    },
+    "demographics": {
+      "age": {
+        "value": "32 years old",
+        "confidence": 1.0
+      },
+      "gender": {
+        "value": "man",
+        "confidence": 1.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}

@@ -1,0 +1,99 @@
+Transcribing audio: data/extra_sample_1.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "My blood pressure is usually around 112/65. I have had two episodes recently where it has spiked to 162/102. There is no history of high blood pressure in my family. I am 5 feet 8 inches tall and weigh 172 pounds. I am on no medications. I do not smoke. I work full-time as a hospice chaeplant. What do some things that could be causing this.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: My blood pressure is usually around 112/65. I have had two episodes recently where it has spiked to ...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "not_stated",
+    "confidence": 0.9,
+    "source_phrase": "not_stated"
+  },
+  "symptoms": [
+    {
+      "value": "blood pressure spikes",
+      "confidence": 0.9,
+      "source_phrase": "I have had two episodes recently where it has spiked to 162/102"
+    }
+  ],
+  "duration": {
+    "value": "recently",
+    "confidence": 0.8,
+    "source_phrase": "I have had two episodes recently"
+  },
+  "severity": {
+    "value": "not_stated",
+    "confidence": 0.7,
+    "source_phrase": "not_stated"
+  },
+  "demographics": {
+    "age": {
+      "value": "not_stated",
+      "confidence": 0.8
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.8
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "My blood pressure is usually around 112/65. I have had two episodes recently where it has spiked to 162/102. There is no history of high blood pressure in my family. I am 5 feet 8 inches tall and weigh 172 pounds. I am on no medications. I do not smoke. I work full-time as a hospice chaeplant. What do some things that could be causing this.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "not_stated",
+      "confidence": 0.9,
+      "source_phrase": "not_stated"
+    },
+    "symptoms": [
+      {
+        "value": "blood pressure spikes",
+        "confidence": 0.9,
+        "source_phrase": "I have had two episodes recently where it has spiked to 162/102"
+      }
+    ],
+    "duration": {
+      "value": "recently",
+      "confidence": 0.8,
+      "source_phrase": "I have had two episodes recently"
+    },
+    "severity": {
+      "value": "not_stated",
+      "confidence": 0.7,
+      "source_phrase": "not_stated"
+    },
+    "demographics": {
+      "age": {
+        "value": "not_stated",
+        "confidence": 0.8
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.8
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}

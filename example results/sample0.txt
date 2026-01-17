@@ -1,0 +1,109 @@
+Transcribing audio: data/extra_sample_0.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "since Appri I have been getting colds at least monthly and canker source I think it is because my immune system is lows, but I cannot stay well enough long enough to exercise. I am a flight attendant and I think being exposed to a lot of germs does not help. I am only 31, but I feel like I am falling apart. I just do not know if I am having a streak of unlucky health. I have been married over a years and have gained 30 pounds, so I am 168 pounds. I am 55 and have always been healthy however, since moving to a colder climbet a few years ago, I am not as physically active anymore.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: since Appri I have been getting colds at least monthly and canker source I think it is because my im...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "getting colds monthly and canker sores",
+    "confidence": 1.0,
+    "source_phrase": "since Appri I have been getting colds at least monthly and canker source"
+  },
+  "symptoms": [
+    {
+      "value": "colds",
+      "confidence": 1.0,
+      "source_phrase": "since Appri I have been getting colds at least monthly"
+    },
+    {
+      "value": "canker sores",
+      "confidence": 1.0,
+      "source_phrase": "since Appri I have been getting colds at least monthly and canker source"
+    }
+  ],
+  "duration": {
+    "value": "monthly",
+    "confidence": 1.0,
+    "source_phrase": "since Appri I have been getting colds at least monthly"
+  },
+  "severity": {
+    "value": "not_stated",
+    "confidence": 0.0,
+    "source_phrase": "not mentioned"
+  },
+  "demographics": {
+    "age": {
+      "value": "31",
+      "confidence": 1.0
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "since Appri I have been getting colds at least monthly and canker source I think it is because my immune system is lows, but I cannot stay well enough long enough to exercise. I am a flight attendant and I think being exposed to a lot of germs does not help. I am only 31, but I feel like I am falling apart. I just do not know if I am having a streak of unlucky health. I have been married over a years and have gained 30 pounds, so I am 168 pounds. I am 55 and have always been healthy however, since moving to a colder climbet a few years ago, I am not as physically active anymore.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "getting colds monthly and canker sores",
+      "confidence": 1.0,
+      "source_phrase": "since Appri I have been getting colds at least monthly and canker source"
+    },
+    "symptoms": [
+      {
+        "value": "colds",
+        "confidence": 1.0,
+        "source_phrase": "since Appri I have been getting colds at least monthly"
+      },
+      {
+        "value": "canker sores",
+        "confidence": 1.0,
+        "source_phrase": "since Appri I have been getting colds at least monthly and canker source"
+      }
+    ],
+    "duration": {
+      "value": "monthly",
+      "confidence": 1.0,
+      "source_phrase": "since Appri I have been getting colds at least monthly"
+    },
+    "severity": {
+      "value": "not_stated",
+      "confidence": 0.0,
+      "source_phrase": "not mentioned"
+    },
+    "demographics": {
+      "age": {
+        "value": "31",
+        "confidence": 1.0
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}

@@ -1,0 +1,99 @@
+Transcribing audio: data/extra_sample_9.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "My 23-year-old son in-law is found to have a heart that is three times the normal size. He does not smoke or drink and has had no other symptoms besides an ache in his mid right back, which I do not know if it is a symptom. He has been a swimmer all of his life and has a normal weight for his height. Will his life be shortened.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: My 23-year-old son in-law is found to have a heart that is three times the normal size. He does not ...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "not_stated",
+    "confidence": 0.5,
+    "source_phrase": "Will his life be shortened."
+  },
+  "symptoms": [
+    {
+      "value": "ache in his mid right back",
+      "confidence": 1.0,
+      "source_phrase": "an ache in his mid right back"
+    }
+  ],
+  "duration": {
+    "value": "not_stated",
+    "confidence": 0.7,
+    "source_phrase": "not known"
+  },
+  "severity": {
+    "value": "not_stated",
+    "confidence": 0.6,
+    "source_phrase": "not explicitly mentioned"
+  },
+  "demographics": {
+    "age": {
+      "value": "23-year-old",
+      "confidence": 1.0
+    },
+    "gender": {
+      "value": "male",
+      "confidence": 1.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "My 23-year-old son in-law is found to have a heart that is three times the normal size. He does not smoke or drink and has had no other symptoms besides an ache in his mid right back, which I do not know if it is a symptom. He has been a swimmer all of his life and has a normal weight for his height. Will his life be shortened.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "not_stated",
+      "confidence": 0.5,
+      "source_phrase": "Will his life be shortened."
+    },
+    "symptoms": [
+      {
+        "value": "ache in his mid right back",
+        "confidence": 1.0,
+        "source_phrase": "an ache in his mid right back"
+      }
+    ],
+    "duration": {
+      "value": "not_stated",
+      "confidence": 0.7,
+      "source_phrase": "not known"
+    },
+    "severity": {
+      "value": "not_stated",
+      "confidence": 0.6,
+      "source_phrase": "not explicitly mentioned"
+    },
+    "demographics": {
+      "age": {
+        "value": "23-year-old",
+        "confidence": 1.0
+      },
+      "gender": {
+        "value": "male",
+        "confidence": 1.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}

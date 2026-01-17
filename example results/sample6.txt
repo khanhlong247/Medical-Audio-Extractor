@@ -1,0 +1,109 @@
+Transcribing audio: data/extra_sample_6.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "My 80-year-old father has a chronic skin condition. A rash which flares up every evening causing a great deal of pain. He is being treated for eczema, but we think it may be something linked to nervous system. Last week, he described the pain over both knees as like being covered in these. he has had bypass surgery, so takes some medication. He is well in himself except for this rash, which is causing a lot of distress. He had shingles several years ago, so I thought it might be related. We are looking for a diagnosis, so he can start to get better. Thank you.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: My 80-year-old father has a chronic skin condition. A rash which flares up every evening causing a g...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "chronic skin condition with a rash that flares up every evening and causes pain",
+    "confidence": 1.0,
+    "source_phrase": "a rash which flares up every evening causing a great deal of pain"
+  },
+  "symptoms": [
+    {
+      "value": "rash",
+      "confidence": 1.0,
+      "source_phrase": "a rash which flares up every evening causing a great deal of pain"
+    },
+    {
+      "value": "pain",
+      "confidence": 1.0,
+      "source_phrase": "causing a great deal of pain"
+    }
+  ],
+  "duration": {
+    "value": "chronic",
+    "confidence": 1.0,
+    "source_phrase": "My 80-year-old father has a chronic skin condition"
+  },
+  "severity": {
+    "value": "great deal of pain",
+    "confidence": 1.0,
+    "source_phrase": "causing a great deal of pain"
+  },
+  "demographics": {
+    "age": {
+      "value": "80-year-old",
+      "confidence": 1.0
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: ABDOMINAL_PAIN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "My 80-year-old father has a chronic skin condition. A rash which flares up every evening causing a great deal of pain. He is being treated for eczema, but we think it may be something linked to nervous system. Last week, he described the pain over both knees as like being covered in these. he has had bypass surgery, so takes some medication. He is well in himself except for this rash, which is causing a lot of distress. He had shingles several years ago, so I thought it might be related. We are looking for a diagnosis, so he can start to get better. Thank you.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "chronic skin condition with a rash that flares up every evening and causes pain",
+      "confidence": 1.0,
+      "source_phrase": "a rash which flares up every evening causing a great deal of pain"
+    },
+    "symptoms": [
+      {
+        "value": "rash",
+        "confidence": 1.0,
+        "source_phrase": "a rash which flares up every evening causing a great deal of pain"
+      },
+      {
+        "value": "pain",
+        "confidence": 1.0,
+        "source_phrase": "causing a great deal of pain"
+      }
+    ],
+    "duration": {
+      "value": "chronic",
+      "confidence": 1.0,
+      "source_phrase": "My 80-year-old father has a chronic skin condition"
+    },
+    "severity": {
+      "value": "great deal of pain",
+      "confidence": 1.0,
+      "source_phrase": "causing a great deal of pain"
+    },
+    "demographics": {
+      "age": {
+        "value": "80-year-old",
+        "confidence": 1.0
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "abdominal_pain",
+    "answers": []
+  }
+}

@@ -1,0 +1,99 @@
+Transcribing audio: data/extra_sample_5.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "I am an asthma suffer, but it was very mild and hardly I have to take medicine once or twice in a year, but recently a disease named as gastroesophageal reflux disease has developed in me and since then the condition of asthma worsened and I have to take Esal inhaler regularly. Is there any advice for me.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: I am an asthma suffer, but it was very mild and hardly I have to take medicine once or twice in a ye...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "asthma worsened",
+    "confidence": 1.0,
+    "source_phrase": "but recently a disease named as gastroesophageal reflux disease has developed in me and since then the condition of asthma worsened"
+  },
+  "symptoms": [
+    {
+      "value": "not_stated",
+      "confidence": 0.0,
+      "source_phrase": "not mentioned"
+    }
+  ],
+  "duration": {
+    "value": "not_stated",
+    "confidence": 0.0,
+    "source_phrase": "not mentioned"
+  },
+  "severity": {
+    "value": "mild",
+    "confidence": 1.0,
+    "source_phrase": "but it was very mild and hardly I have to take medicine once or twice in a year"
+  },
+  "demographics": {
+    "age": {
+      "value": "not_stated",
+      "confidence": 0.0
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "I am an asthma suffer, but it was very mild and hardly I have to take medicine once or twice in a year, but recently a disease named as gastroesophageal reflux disease has developed in me and since then the condition of asthma worsened and I have to take Esal inhaler regularly. Is there any advice for me.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "asthma worsened",
+      "confidence": 1.0,
+      "source_phrase": "but recently a disease named as gastroesophageal reflux disease has developed in me and since then the condition of asthma worsened"
+    },
+    "symptoms": [
+      {
+        "value": "not_stated",
+        "confidence": 0.0,
+        "source_phrase": "not mentioned"
+      }
+    ],
+    "duration": {
+      "value": "not_stated",
+      "confidence": 0.0,
+      "source_phrase": "not mentioned"
+    },
+    "severity": {
+      "value": "mild",
+      "confidence": 1.0,
+      "source_phrase": "but it was very mild and hardly I have to take medicine once or twice in a year"
+    },
+    "demographics": {
+      "age": {
+        "value": "not_stated",
+        "confidence": 0.0
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}

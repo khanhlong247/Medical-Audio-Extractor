@@ -1,0 +1,99 @@
+Transcribing audio: data/extra_sample_4.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "Hellounintelligible]. Can I go to the gym if I have some symptoms of jaundice, I just found out that I have mild fatty changes on my liver. At the same time my bilirubin level is also slightly above the recommended range. I need your suggestion. Thank you.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: Hellounintelligible]. Can I go to the gym if I have some symptoms of jaundice, I just found out that...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "mild fatty changes on my liver and slightly above recommended bilirubin level",
+    "confidence": 1.0,
+    "source_phrase": "I have some symptoms of jaundice, I just found out that I have mild fatty changes on my liver. At the same time my bilirubin level is also slightly above the recommended range."
+  },
+  "symptoms": [
+    {
+      "value": "jaundice",
+      "confidence": 1.0,
+      "source_phrase": "I have some symptoms of jaundice"
+    }
+  ],
+  "duration": {
+    "value": "not_stated",
+    "confidence": 0.5,
+    "source_phrase": "not explicitly stated in the transcript"
+  },
+  "severity": {
+    "value": "mild",
+    "confidence": 1.0,
+    "source_phrase": "I have mild fatty changes on my liver"
+  },
+  "demographics": {
+    "age": {
+      "value": "not_stated",
+      "confidence": 0.0
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "Hellounintelligible]. Can I go to the gym if I have some symptoms of jaundice, I just found out that I have mild fatty changes on my liver. At the same time my bilirubin level is also slightly above the recommended range. I need your suggestion. Thank you.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "mild fatty changes on my liver and slightly above recommended bilirubin level",
+      "confidence": 1.0,
+      "source_phrase": "I have some symptoms of jaundice, I just found out that I have mild fatty changes on my liver. At the same time my bilirubin level is also slightly above the recommended range."
+    },
+    "symptoms": [
+      {
+        "value": "jaundice",
+        "confidence": 1.0,
+        "source_phrase": "I have some symptoms of jaundice"
+      }
+    ],
+    "duration": {
+      "value": "not_stated",
+      "confidence": 0.5,
+      "source_phrase": "not explicitly stated in the transcript"
+    },
+    "severity": {
+      "value": "mild",
+      "confidence": 1.0,
+      "source_phrase": "I have mild fatty changes on my liver"
+    },
+    "demographics": {
+      "age": {
+        "value": "not_stated",
+        "confidence": 0.0
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}

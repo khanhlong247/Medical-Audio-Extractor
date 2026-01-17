@@ -1,0 +1,119 @@
+Transcribing audio: data/extra_sample_8.wav...
+
+-------------------- TASK 1 OUTPUT (ASR) --------------------
+{
+  "transcript": "for had been diagnosed with spinal stenosis, but also developed a slight limp, which has now turned into a constant limp for and the right hip also hurts and when standing my joints seem to creak and pop, what of I looking at for and what type doctor do I need to see.</s>",
+  "confidence": 0.95,
+  "segments": []
+}
+
+Extracting Clinical Entities...
+Cleaned Text: for had been diagnosed with spinal stenosis, but also developed a slight limp, which has now turned ...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+-------------------- TASK 2 OUTPUT (NLP) --------------------
+{
+  "chief_complaint": {
+    "value": "right hip hurts",
+    "confidence": 1.0,
+    "source_phrase": "the right hip also hurts"
+  },
+  "symptoms": [
+    {
+      "value": "slight limp",
+      "confidence": 1.0,
+      "source_phrase": "developed a slight limp"
+    },
+    {
+      "value": "constant limp",
+      "confidence": 1.0,
+      "source_phrase": "now turned into a constant limp"
+    },
+    {
+      "value": "joints creak and pop",
+      "confidence": 1.0,
+      "source_phrase": "when standing my joints seem to creak and pop"
+    }
+  ],
+  "duration": {
+    "value": "not_stated",
+    "confidence": 0.5,
+    "source_phrase": "not explicitly stated in the transcript"
+  },
+  "severity": {
+    "value": "not_stated",
+    "confidence": 0.5,
+    "source_phrase": "not explicitly stated in the transcript"
+  },
+  "demographics": {
+    "age": {
+      "value": "not_stated",
+      "confidence": 0.0
+    },
+    "gender": {
+      "value": "not_stated",
+      "confidence": 0.0
+    }
+  }
+}
+
+Mapping to Clinical Protocol...
+Detected Scenario: UNKNOWN
+
+-------------------- TASK 3 OUTPUT (MAPPING) --------------------
+[]
+
+==============================
+FINAL COMBINED RESULT
+==============================
+{
+  "raw_transcript": "for had been diagnosed with spinal stenosis, but also developed a slight limp, which has now turned into a constant limp for and the right hip also hurts and when standing my joints seem to creak and pop, what of I looking at for and what type doctor do I need to see.</s>",
+  "extracted_entities": {
+    "chief_complaint": {
+      "value": "right hip hurts",
+      "confidence": 1.0,
+      "source_phrase": "the right hip also hurts"
+    },
+    "symptoms": [
+      {
+        "value": "slight limp",
+        "confidence": 1.0,
+        "source_phrase": "developed a slight limp"
+      },
+      {
+        "value": "constant limp",
+        "confidence": 1.0,
+        "source_phrase": "now turned into a constant limp"
+      },
+      {
+        "value": "joints creak and pop",
+        "confidence": 1.0,
+        "source_phrase": "when standing my joints seem to creak and pop"
+      }
+    ],
+    "duration": {
+      "value": "not_stated",
+      "confidence": 0.5,
+      "source_phrase": "not explicitly stated in the transcript"
+    },
+    "severity": {
+      "value": "not_stated",
+      "confidence": 0.5,
+      "source_phrase": "not explicitly stated in the transcript"
+    },
+    "demographics": {
+      "age": {
+        "value": "not_stated",
+        "confidence": 0.0
+      },
+      "gender": {
+        "value": "not_stated",
+        "confidence": 0.0
+      }
+    }
+  },
+  "clinical_flow": {
+    "scenario": "unknown",
+    "answers": []
+  }
+}
